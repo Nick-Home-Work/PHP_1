@@ -26,7 +26,7 @@ $precise1 = 1.5;
 $precise2 = 1.5e4;
 $precise3 = 6E-8;
 echo "$precise1 | $precise2 | $precise3 <br>";
-
+//ничего менять не буду реквест не получился
 //строки
 $str = 1;
 echo "$str <br>";
