@@ -1,83 +1,122 @@
 <?php
-//вывод сообщения
-/*echo 'Hello home work <br/>';
+//1
+echo '</br></br>задание1</br>';
+function par($a, $b){
+    if($a >= 0 && $b >= 0){
+       return $a - $b;
+    }
+    else if($a < 0 && $b < 0){
+       return $a * $b;
+    }
+    else
+    {
+       return $a + $b;
+    }
+}
+$m = par(-2, -3);
+echo $m;
+//2
+echo '</br></br>задание2</br>';
+$a = rand(0, 15);
+switch($a) {
+    case 0:
+     echo 0 . '</br>';
+    case 1:
+     echo 1 . '</br>';
+    case 2:
+     echo 2 . '</br>';
+    case 3:
+     echo 3 . '</br>';
+    case 4:
+     echo 4 . '</br>';
+    case 5:
+     echo 5 . '</br>';
+    case 6:
+     echo 6 . '</br>';
+    case 7:
+     echo 7 . '</br>';
+    case 8:
+     echo 8 . '</br>';
+    case 9:
+     echo 9 . '</br>';
+    case 10:
+     echo 10 . '</br>';
+    case 11:
+     echo 11 . '</br>';
+    case 12:
+     echo 12 . '</br>';
+    case 13:
+     echo 13 . '</br>';
+    case 14:
+     echo 14 . '</br>';
+    case 15:
+     echo 15 . '</br>';
 
-//переменные
-$name = "Nick";
-echo "Hello, $name!<br/>";
+}
+//3 + 4
+echo '</br></br>задание3 + 4</br>';
+function sum($a, $b){
+    return $a + $b;
+}
+function sub($a, $b){
+    return $a - $b;
+}
+function mult($a, $b){
+    return $a * $b;
+}
+function div($a, $b){
+    return $a / $b;
+}
 
-//константы
-define('MY_CONST', 'j do it');
-echo MY_CONST;
+function arithmetic($arg1, $arg2, $operation){
+    switch ($operation){
+        case 'сложение': return sum($arg1, $arg2);break;
+        case 'вычитание': return sub($arg1, $arg2);break;
+        case 'умножение': return mult($arg1, $arg2);break;
+        case 'деление': return div($arg1, $arg2);break;
+    }
 
-//типы данных
-//int
-$int10 = 42;
-$int2 = 0b101010;
-$int8 = 052;
-$int16 = 0x2A;
-echo "Десятеричная система $int10 <br>";
-echo "Двоичная система $int2 <br>";
-echo "Восьмеричная система $int8 <br>";
-echo "Шестнадцатеричная система $int16 <br>";
-
-//плавающ точка
-$precise1 = 1.5;
-$precise2 = 1.5e4;
-$precise3 = 6E-8;
-echo "$precise1 | $precise2 | $precise3 <br>";
-//ничего менять не буду реквест не получился
-//строки
-$str = 1;
-echo "$str <br>";
-echo '$str <br>';
-//обьединение
-$a = 'Hello,';
-$b = 'world';
-$c = $a . $b;
-echo $c;
-//математика
-$a = 4;
-$b = 5;
-echo $a + $b . '<br>'; // сложение
-echo $a * $b . '<br>'; // умножение
-echo $a -$b . '<br>'; // вычитание
-echo $a / $b . '<br>'; // деление
-echo $a % $b . '<br>'; // остаток от деления
-echo $a ** $b . '<br>' . '<br>' . '<br>'; // возведение в степень*/
-$d = 'Задание 3';
-echo $d . '<br>' ;
-
-$a = 5;
-$b = '05';
-var_dump($a == $b); // Почему true?
-echo '<br>1 == не жестеое равенство - строка приведена к числу - Сравнение по значению <br>';
-var_dump((int)'012345'); // Почему 12345?
-echo '<br>2 ни одно число не начинается с нуля  <br>';
-var_dump((float)123.0 === (int)123.0); // Почему false?
-echo '<br>3 разные типы === - жесткое равенство  <br>';
-var_dump((int)0 === (int)'hello, world'); // Почему true?
-echo '<br>4  так 0 === 0 <br>';
-
-$g = '<br><br>Задание 4<br><br>';
-echo $g . '<br>' ;
-
-$title = 'Какой то текст';
+}
+$d = arithmetic(6, 5, 'сложение');
+echo $d;
+// 5
+echo '</br></br>задание5</br>';
 $data = date("d-m-Y");
+echo '</br></br>задание6</br>';
 
-$g = '<br><br>Задание 5<br><br>';
-echo $g . '<br>' ;
+function power($val, $pow)
+	{
+		if ($val == 0)
+		return 0;
+		elseif ($pow == 0)
+		return 1;
+		elseif ($pow < 0)
+		return power(1/$val, -$pow);
+		else
+		return $val *  power($val, $pow-1);
+	}
+	echo power(3, 3);
 
-$one = 5;
-$two = 7;
-echo $one . '= $one<br>';
-echo $two . '= $two<br>';
-$one = $one + $two;
-$two = $one - $two;
-$one = $one - $two;
-echo '<br><br> Теперь немного математики и... <br><br>';
-echo $one . '= $one<br>';
-echo $two . '= $two<br>';
+echo '</br></br>задание7</br>';
+function oue(){
+$h = date("H")-1;
+$m = date("i");
+if ($h==1 || $h==21) {
+$hours = " час";}
+elseif (($h>=2 && $h<=4) || ($h>=22 && $h<=24)) {
+$hours = " часа";}
+else {$hours = " часов";}
+if (($m<20) || ($m>10))
+{$minutes = " минут.";}
+elseif (($m % 10) === 1) {
+$minutes = " минута.";}
+elseif ((($m % 10)>=2) && (($m % 10)<=4)) {
+$minutes = " минуты.";}
+else {
+$minutes = " минут.";}
+echo $h . $hours . " " . $m . $minutes;
+}
+oue();
 ?>
 
 <!doctype html>
@@ -85,17 +124,18 @@ echo $two . '= $two<br>';
 <head>
   <meta charset="utf-8" />
   <title>
-      <?php
-       echo $title;
-      ?>
+      lesson2
 </title>
-  <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
+    <footer>
  <h1>
      <?php
-       echo $data;
+      echo 'к заданию 5  -      ' . $data;
+
       ?>
  </h1>
+    </footer>
 </body>
 </html>
