@@ -1,5 +1,6 @@
 <?php
 //1
+//какие то поблемы с git не могу пока сообразить пинет изменений нет - очень странно!
 echo '</br></br>задание1</br>';
 function par($a, $b){
     if($a >= 0 && $b >= 0){
@@ -126,7 +127,7 @@ oue();
   <title>
       lesson2
 </title>
-
+lesson
 </head>
 <body>
     <footer>
