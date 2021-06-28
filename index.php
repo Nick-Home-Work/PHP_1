@@ -1,33 +1,69 @@
+
 <?php
-//к сожалению пустышка хочу разобраться но не получается пока только вывожу галерею и ВСЕ
+
 $conn = mysqli_connect("localhost", "root", "root", "myimage");
 
 if (!$conn) {
-echo "Не сраслось: " . mysql_error();
-exit;
+    echo "Не сраслось: " . mysql_error();
+    exit;
 }
 
 $sql = "SELECT image_id as id, adress_image
-FROM images
-WHERE image_id > 0";
+        FROM   images
+        WHERE  image_id > 0 order by Acounter desc";
 
 $result = mysqli_query($conn, $sql);
 
+
 while ($row = mysqli_fetch_assoc($result)) {
-?>
-<a target='_blank'href="index.php?image_id=<?php echo $row['id']; ?>">
-<img class="img" src='<?php echo $row['adress_image']; ?>'>
-</a>
+   ?>
+    <a target='_blank'href="picture.php?image_id=<?php echo $row['id']; ?>">
+      <img class="img" src='<?php echo $row['adress_image']; ?>'>
+	</a>
 
 <?php }
 
 ?>
-<?php
 
-if(isset($_GET['onClik'])){
-?>
-<img src="<?php echo $row['adress_image']; ?>">
-<?php
-}
-?>
-?>
+
+
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title></title>
+		  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		  <style>
+		     .galery{
+				 display:flex;
+				 justify-content:center;
+				 width:900px;
+				 margin: 100px auto;
+			 }
+			 .img{
+
+				 width:100px;
+				 margin:5px;
+                 cursor:pointer;
+			 }
+
+			 .full{
+				position:fixed;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				top:0px;
+				left:0px;
+				width:100vw;
+				height:100vh;
+				z-index: 99999;
+
+			 }
+		  </style>
+
+     </head>
+     <body>
+	    <div class='galery'>
+		</div>
+     </body>
+</html>
